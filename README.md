@@ -8,7 +8,7 @@ Incluso antes de estar aprendiendo _Ciencia de datos y Machine learning_, siempr
 
 [Flutter](https://flutter.dev/) es actualmente una de las mejores herramientas para crear aplicaciones multiplataforma para cualquier pantalla, desde aplicaciones web, Android, iOS y aplicaciones embebidas. Actualmente lo utilizan, entre otras, empresas como BMW, Toyota o eBay. Fue lanzado en 2017 por Google. 
 
-Usa el lenguaje de programación Dart que es orientado a objetos, tipado estáticamente y se compila a código de máquina nativo. Además, su curva de aprendizaje es relativamente baja y puedes familiarizarte rápidamente con él si vienes de lenguajes como Javascript o Java. Esto permite que las aplicaciones Flutter se ejecuten de forma muy rápida y eficiente. La tecnología de compilación de Dart le permite ejecutar código de diferentes maneras:
+Usa el lenguaje de programación **`[Dart](https://dart.dev/)** que es orientado a objetos, tipado estáticamente y se compila a código de máquina nativo. Además, su curva de aprendizaje es relativamente baja y puedes familiarizarte con él rápidamente si vienes de lenguajes como **JavaScript** o **Java**. Dart, permite que las aplicaciones de Flutter se ejecuten de forma muy rápida y eficiente. La tecnología de compilación permite ejecutar código de diferentes maneras:
 
 **Plataforma nativa:** para aplicaciones dirigidas a dispositivos móviles y de escritorio, Dart incluye una máquina virtual Dart con compilación **Just-in-time** (JIT) y un compilador **ahead of time** (AOT) para compilar código de máquina. Otras funcionalidades como **_Hot-reload_** permiten ver los cambios que vayas realizando en tu interfaz de manera inmediata.
 
