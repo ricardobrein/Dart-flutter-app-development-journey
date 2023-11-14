@@ -1,4 +1,4 @@
-import persona.dart';
+/*import persona.dart';
 
 main() {
   // final persona = {'nombre': 'Ricardo', 'edad': 33};
@@ -20,4 +20,4 @@ main() {
 
   print(persona.toString());
 
-}
+}*/

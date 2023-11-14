@@ -11,7 +11,7 @@ Estas comprobaciones le permiten corregir estos errores antes de implementar su 
 */
 // With null safety, none of these can ever be null.
 
-void main() {
+/*void main() {
   var i = 42; // Declarada como un entero.
   String name = getFileName();
   final b = Foo();
@@ -25,4 +25,4 @@ void main() {
   void main() {
     print(getLength('This is a string!'));
   }
-}
+}*/

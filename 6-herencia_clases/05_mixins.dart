@@ -1,5 +1,5 @@
 // class
-mixin Logger {
+/*mixin Logger {
   //Los mixins son clases abstractas por tanto no pueden crearse instancias o no pueden ser inicializados pero no pueden tener constructores
   void imprimir(String texto) {
     final hoy = DateTime.now();
@@ -57,3 +57,4 @@ main() {
 // void volar()=> print('Este animal puede volar'); }
 // class Shark extends Fish with Swim{}
 // class Dolphin extends Mammal with Swim{} class Duck extends Bird with Walk, Swim, Fly{}
+*/
