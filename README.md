@@ -1,23 +1,26 @@
-# Introduccion al desarrollo de aplicaciones moviles con [Flutter](https://docs.flutter.dev/get-started/test-drive) y [Dart🎯] (https://dart.dev/).
+# Introducción al desarrollo de aplicaciones móviles con [Dart🎯](https://dart.dev/guides) y [Flutter](https://docs.flutter.dev/).
 
-Bienvenidos al repositorio para aprender Dart y Flutter!
+### ¡Bienvenidos al repositorio donde comparto el roadmap y recursos útiles para aprender Dart y Flutter!
 
-Después de pasar algún tiempo aprendiendo ciencia de datos y machine learning, siempre había tenido ganas de aprender a desarrollar aplicaciones móviles.
+Incluso antes de estar aprendiendo _Ciencia de datos y Machine learning_, siempre había tenido muchas ganas de adentrarme en el mundo del **desarrollo de aplicaciones móviles nativas**. Finalmente se me presentó esta increíble oportunidad de aprender de la mano de un amigo y experto en Flutter, [Chema](https://flutteracademy.app/) en [Flutter Academy](https://github.com/flutteracademy-app), con el cual estoy muy agradecido, por ser mi mentor en este camino.
 
-Por lo que se me presento la oportunidad de aprender de la mano de un amigo y experto en Flutter, Chema. 
+## ¿Por qué Flutter?
 
-Flutter es actualmente una de las mejores herramientas para crear aplicaciones multiplataforma para cualquier dispositivo, desde aplicaciones webs, android, iOS y aplicaciones embebidas.
+[Flutter](https://flutter.dev/) es actualmente una de las mejores herramientas para crear aplicaciones multiplataforma para cualquier pantalla, desde aplicaciones web, Android, iOS y aplicaciones embebidas. Actualmente lo utilizan, entre otras, empresas como BMW, Toyota o eBay. Fue lanzado en 2017 por Google. 
 
-Flutter fué lanzado en 2017 por Google. Usa el lenguaje de programación Dart que es orientado a objetos, tipado estáticamente y se compila a código de máquina nativo. Esto permite que las aplicaciones Flutter se ejecuten de forma muy rápida y eficiente. La tecnología de compilación de Dart le permite ejecutar código de diferentes maneras:
+Usa el lenguaje de programación **[Dart](https://dart.dev/)** que es orientado a objetos, tipado estáticamente y se compila a código de máquina nativo. Además, su curva de aprendizaje es relativamente baja y puedes familiarizarte con él rápidamente si vienes de lenguajes como **JavaScript** o **Java**. Dart, permite que las aplicaciones de Flutter se ejecuten de forma muy rápida y eficiente. La tecnología de compilación permite ejecutar código de diferentes maneras:
 
-**Plataforma nativa:** para aplicaciones dirigidas a dispositivos móviles y de escritorio, Dart incluye una máquina virtual Dart con compilación justo a tiempo (JIT) y un compilador anticipado (AOT) para producir código de máquina.
+**Plataforma nativa:** para aplicaciones dirigidas a dispositivos móviles y de escritorio, Dart incluye una máquina virtual Dart con compilación **Just-in-time** (JIT) y un compilador **ahead of time** (AOT) para compilar código de máquina. Otras funcionalidades como **_Hot-reload_** permiten ver los cambios que vayas realizando en tu interfaz de manera inmediata.
 
-**Plataforma web:** para aplicaciones orientadas a la web, Dart puede compilar con fines de desarrollo o producción. Su compilador web traduce de Dart a JavaScript
+**Aplicaciones web:** para aplicaciones orientadas a la web, Dart puede compilar con fines de desarrollo o producción. Su compilador web traduce de Dart a JavaScript.
 
-#
 
-En este repositorio compartiré mi progreso y proyectos mientras apredo Flutter y Dart. Comenzaré aprendiendo porgramación en Dart y creando aplicaciones simples en Flutter para familiarizarme con el framework, luego iré agregando más caracteríticas y funcionalidad.
+## ¿Qué encontrarás aquí?
 
-A largo plazo, me gustaría explorar cómo integrar mis habildades de aprendizaje automático en aplicaciones Flutter, por ejemplo reconocimiento de imágenes o procesamiento de voz en el móvil.
+En este repositorio compartiré los recursos, notas de aprendizaje y proyectos mientras aprendemos Flutter y Dart. Comenzaré aprendiendo los _principios y sintaxis de la programación en Dart_ y adquiriendo unas bases sólidas de programación orientada a objetos, asincronía, manejo de estados, código limpio y escalable, para después adentrarnos en crear nuestras primeras aplicaciones con Widgets de Flutter y familiarizarnos con el framework, la ideas es posteriormente ir agregando más características y funcionalidades.
 
-Espero que mi viaje apredizaje te sea útil. Bienvenido y ¡gracias por pasar!
+A largo plazo, me gustaría explorar cómo integrar mis habilidades de Machine learning y procesamiento de datos en aplicaciones creadas con Flutter, por ejemplo, reconocimiento de imágenes, LLMs, procesamiento de voz y aplicaciones de monitorización en tiempo real.
+
+Espero que este repo de recursos te sea útil. ¡Bienvenido y gracias por pasar!
+
+
