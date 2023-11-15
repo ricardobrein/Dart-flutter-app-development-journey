@@ -1,35 +1,25 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-//La funcion main(principal), simplemente esta indicando que,
-// flutter ejecute la app definida en MyApp.
 
 void main() {
   runApp(MyApp());
 }
 
-/* La clase MyApp extiende a Steteless, es decir la propia app
-es un widget, los widgets son el elemento principal en flutter
-*/
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-/*
-Arriba, El Código de MyApp configura toda la app, le asigna un nombre,
-tema visual, y establece el widget "principal", (lib/main.dart)
-*/
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'WordPair',
+        title: 'Namer App',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         ),
         home: MyHomePage(),
       ),
@@ -37,12 +27,6 @@ tema visual, y establece el widget "principal", (lib/main.dart)
   }
 }
 
-// Gestionamos el estado de la app en Flutter
-
-/* La clase AppState extiende a ChangeNotifier, esto significa
-que la app puede notificiar a otros widgets acerca de los
-cambios que ocurren cuando realizas una accion
-*/
 class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
   var history = <WordPair>[];
@@ -54,40 +38,26 @@ class MyAppState extends ChangeNotifier {
     var animatedList = historyListKey?.currentState as AnimatedListState?;
     animatedList?.insertItem(0);
     current = WordPair.random();
-    //Tenia un error Aqui llamando a WordPair Primero
-    // Reasignar el elemento con un nuevo WordPair
-    notifyListeners(); //Notificar a los escuchas
+    notifyListeners();
   }
 
-  var favoritos = <WordPair>[];
+  var favorites = <WordPair>[];
 
   void toggleFavorite([WordPair? pair]) {
     pair = pair ?? current;
-
-    // Operador de nulidad ??
-    // Aqui le aplicare el control de flujo a pair no a current
-    if (favoritos.contains(pair)) {
-      favoritos.remove(pair);
+    if (favorites.contains(pair)) {
+      favorites.remove(pair);
     } else {
-      favoritos.add(pair);
+      favorites.add(pair);
     }
     notifyListeners();
   }
 
   void removeFavorite(WordPair pair) {
-    favoritos.remove(pair);
+    favorites.remove(pair);
     notifyListeners();
   }
 }
-
-/* Cuando se crea el estado se retorna con el ChangeNotifierProvider
-que escribimos en el BuildContext de arriba, y los widgets
-obtendran el estado
-*/
-
-//Note:  Hot reload se inicia cuando guardas los cambios
-
-// El elemento MyHomePage ya lo hemos modificado arriba
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -112,13 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
-    /*En las lineas de arriba creamos las 
-    pantallas que cambian de estado cuando las 
-    presionamos*/
 
-    // El contenedor de la pantalla actual, con
-    // su color de fondo y la animacion de cambio.
-
+    // The container for the current page, with its background color
+    // and subtle switching animation.
     var mainArea = ColoredBox(
       color: colorScheme.surfaceVariant,
       child: AnimatedSwitcher(
@@ -131,8 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth < 450) {
-            // Usamos un layout para móviles con BottomNavigationBar
-
+            // Use a more mobile-friendly layout with BottomNavigationBar
+            // on narrow screens.
             return Column(
               children: [
                 Expanded(child: mainArea),
@@ -192,8 +158,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Pagina generadora de palabras
-
 class GeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -201,7 +165,7 @@ class GeneratorPage extends StatelessWidget {
     var pair = appState.current;
 
     IconData icon;
-    if (appState.favoritos.contains(pair)) {
+    if (appState.favorites.contains(pair)) {
       icon = Icons.favorite;
     } else {
       icon = Icons.favorite_border;
@@ -237,22 +201,19 @@ class GeneratorPage extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(flex: 3),
+          Spacer(flex: 2),
         ],
       ),
     );
   }
 }
 
-// Refactorización de widgets y llamar al metodo
-// Que creamos arriba
-// Ahora el widget se convierte en Bigcard
-
 class BigCard extends StatelessWidget {
   const BigCard({
     Key? key,
     required this.pair,
   }) : super(key: key);
+
   final WordPair pair;
 
   @override
@@ -261,16 +222,15 @@ class BigCard extends StatelessWidget {
     var style = theme.textTheme.displayMedium!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
-// Solicitar el tema actual de la app con context
 
-// Añadir un tema al Texto y cambial la linea de child
-// Copiamos el Style para ponerselo al text
     return Card(
       color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: AnimatedSize(
           duration: Duration(milliseconds: 200),
+          // Make sure that the compound word wraps correctly when the window
+          // is too narrow.
           child: MergeSemantics(
             child: Wrap(
               children: [
@@ -291,17 +251,15 @@ class BigCard extends StatelessWidget {
   }
 }
 
-// Pagina de Favoritos:
-
 class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var appState = context.watch<MyAppState>();
 
-    if (appState.favoritos.isEmpty) {
+    if (appState.favorites.isEmpty) {
       return Center(
-        child: Text('No hay favoritos.'),
+        child: Text('No favorites yet.'),
       );
     }
 
@@ -311,7 +269,7 @@ class FavoritesPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(30),
           child: Text('You have '
-              '${appState.favoritos.length} favoritos:'),
+              '${appState.favorites.length} favorites:'),
         ),
         Expanded(
           // Make better use of wide windows with a grid.
@@ -321,7 +279,7 @@ class FavoritesPage extends StatelessWidget {
               childAspectRatio: 400 / 80,
             ),
             children: [
-              for (var pair in appState.favoritos)
+              for (var pair in appState.favorites)
                 ListTile(
                   leading: IconButton(
                     icon: Icon(Icons.delete_outline, semanticLabel: 'Delete'),
@@ -389,7 +347,7 @@ class _HistoryListViewState extends State<HistoryListView> {
                 onPressed: () {
                   appState.toggleFavorite(pair);
                 },
-                icon: appState.favoritos.contains(pair)
+                icon: appState.favorites.contains(pair)
                     ? Icon(Icons.favorite, size: 12)
                     : SizedBox(),
                 label: Text(
